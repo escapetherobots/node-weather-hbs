@@ -1,14 +1,19 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
+const { config } = require('dotenv');
 
 const geocode = require('./utilities/_app_weather_geocode.js');
 const forecast = require('./utilities/_app_weather_forecast.js');
+
+// config for env files!
+config();
 
 // -NOTE - 
 // node provides following paths:
 // console.log(__dirname);
 // console.log(__filename);
+
 
 const publicDirPath = path.join(__dirname, '../public');
 console.log(publicDirPath);
@@ -17,6 +22,10 @@ console.log(publicDirPath);
 // invoke and then define
 // express can send html or JSON directly to client
 const app = express();
+
+// abstract port numbers: 3000 - localhost / ???? - heroku
+const PORT = process.env.PORT;
+
 
 //--------------------------------------------
 // 7-47 setup template engine
@@ -185,4 +194,4 @@ app.get('/weather', (req, res) => {
 
 
 
-  app.listen(3000, () => console.log('server is up on 3000'));
+  app.listen(PORT, () => console.log('server is up on port: ' + PORT));

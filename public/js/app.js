@@ -43,7 +43,7 @@ condition.textContent = '';
 weatherForm.addEventListener('submit', (event) => {
     event.preventDefault();
     // console.log('event: ', searchVal.value);
-    fetch('http://localhost:3000/weather?address=' + searchVal.value).then((response) => {
+    fetch('/weather?address=' + searchVal.value).then((response) => {
         response.json().then(data => {
             if(data.error) {
                 console.log(data.error);
