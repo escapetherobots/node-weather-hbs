@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css">
+        
+    </head>
+    <body>
+        <div class="main-content">
+            {{>header}}
+
+            <h2>{{title}}</h2>
+            <p>Use this site to get your weather!</p>
+
+
+            {{!--08-58 Create a search form --}}
+            <form>
+                <input placeholder="location">
+                <button>Search</button>
+                
+            </form>
+
+            <!--ERROR-->
+            <p id="message-1"></p>
+            <!--DATA-->
+            
+            
+            
+            
+
+            <div class="wrapper">
+                <div class="temp"><p id="temp"></p></div>
+                <div class="city"><p id="city"></p></div>
+                <div class="state"><p id="state"></p></div>
+                <div class="condition"><p id="condition"></p></div>
+            </div>
+
+        </div>
+        {{!-- <img src="/img/escape.png" /> --}}
+        {{>footer}}
+        <script src="/js/app.js"></script>
+    </body>
+</html>
